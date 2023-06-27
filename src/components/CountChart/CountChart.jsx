@@ -1,6 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import { mockDataTeam as data } from "../../data/mockData";
 import { useSetCountData } from "../../hooks/use-set-count-data.hook";
+import { consts } from "./consts";
 
 export const CountChart = () => {
   const { chartDataArray } = useSetCountData(data);
@@ -10,7 +11,7 @@ export const CountChart = () => {
       <ResponsivePie
         data={chartDataArray}
         colors={{ scheme: "blues" }}
-        margin={{ top: 50, right: 80, bottom: 70, left: 80 }}
+        margin={consts.margin}
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
@@ -24,31 +25,7 @@ export const CountChart = () => {
         radialLabelsLinkColor={{ from: "color" }}
         enableSliceLabels={false}
         activeOuterRadiusOffset={8}
-        legends={[
-          {
-            anchor: "bottom",
-            direction: "row",
-            justify: false,
-            translateX: 0,
-            translateY: 56,
-            itemsSpacing: 0,
-            itemWidth: 100,
-            itemHeight: 18,
-            itemTextColor: "#999",
-            itemDirection: "left-to-right",
-            itemOpacity: 1,
-            symbolSize: 18,
-            symbolShape: "circle",
-            effects: [
-              {
-                on: "hover",
-                style: {
-                  itemTextColor: "#000",
-                },
-              },
-            ],
-          },
-        ]}
+        legends={consts.legends}
       />
     </div>
   );

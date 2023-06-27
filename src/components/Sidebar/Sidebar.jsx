@@ -9,24 +9,8 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useState } from "react";
 import { Menu, MenuItem, ProSidebar } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
-
-const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  return (
-    <MenuItem
-      active={selected === title}
-      style={{ color: colors.grey[100] }}
-      onClick={() => setSelected(title)}
-      icon={icon}
-    >
-      <Typography>{title}</Typography>
-      <Link to={to} />
-    </MenuItem>
-  );
-};
+import { ItemSidebar } from "../ItemSidebar/ItemSidebar";
 
 const Sidebar = () => {
   const theme = useTheme();
@@ -34,29 +18,28 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
 
+  const styles = {
+    height: "100vh",
+    "& .pro-sidebar-inner": {
+      height: "100vh",
+      background: `${colors.primary[400]} !important`,
+    },
+    "& .pro-icon-wrapper": {},
+    "& .pro-inner-item": {
+      padding: "5px 35px 5px 20px !important",
+    },
+    "& .pro-inner-item:hover": {
+      color: "#0f46a0 !important",
+    },
+    "& .pro-menu-item.active": {
+      color: "#0f46a0 !important",
+    },
+  };
+
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        "& .pro-sidebar-inner": {
-          height: "100vh",
-          background: `${colors.primary[400]} !important`,
-        },
-        "& .pro-icon-wrapper": {},
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#0f46a0 !important",
-        },
-        "& .pro-menu-item.active": {
-          color: "#0f46a0 !important",
-        },
-      }}
-    >
+    <Box sx={styles}>
       <ProSidebar collapsed={isCollapsed} style={{ height: "100vh" }}>
         <Menu iconsape="square">
-          {/* Logo and menu icon */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
@@ -80,7 +63,6 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
-          {/* Menu itmes */}
           <Box paddingLeft={isCollapsed ? undefined : "10px"}>
             <Typography
               variant="h6"
@@ -89,14 +71,14 @@ const Sidebar = () => {
             >
               Pages
             </Typography>
-            <Item
+            <ItemSidebar
               title="Dashboard"
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            <ItemSidebar
               title="RFX"
               to="/rfx"
               icon={<AccountTreeIcon />}
@@ -110,14 +92,14 @@ const Sidebar = () => {
             >
               Charts
             </Typography>
-            <Item
+            <ItemSidebar
               title="Deals Chart"
               to="/deals"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            <ItemSidebar
               title="Efforts Chart"
               to="/efforts"
               icon={<BarChartOutlinedIcon />}
@@ -125,14 +107,14 @@ const Sidebar = () => {
               set
               Selected={setSelected}
             />
-            <Item
+            <ItemSidebar
               title="Stages Chart"
               to="/stages"
               icon={<AlignVerticalBottomIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            <ItemSidebar
               title="Amount Chart"
               to="/amount"
               icon={<AlignVerticalBottomIcon />}
@@ -140,14 +122,14 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <Item
+            <ItemSidebar
               title="Count Chart"
               to="/count"
               icon={<PieChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            <ItemSidebar
               title="Projects Chart"
               to="/projects"
               icon={<AlignHorizontalLeftIcon />}

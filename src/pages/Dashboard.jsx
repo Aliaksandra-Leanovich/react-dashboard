@@ -14,14 +14,12 @@ export const Dashboard = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" />
       </Box>
-      {/* Grid & Charts */}
       <Box
         display="grid"
         gridTemplateColumns="repeat(8, 1fr)"
         gridAutoRows="140px"
         gap="20px"
       >
-        {/* Row 2 */}
         <Box
           gridColumn="span 8"
           gridRow="span 2"
@@ -49,8 +47,6 @@ export const Dashboard = () => {
             <ProjectChart isDashboard={true} />
           </Box>
         </Box>
-
-        {/* Row 3 */}
         <Box
           gridColumn="span 4"
           gridRow="span 2"

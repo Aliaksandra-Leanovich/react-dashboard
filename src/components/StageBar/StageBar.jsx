@@ -2,6 +2,7 @@ import React from "react";
 import { mockDataTeam as data } from "../../data/mockData";
 import { ResponsiveBar } from "@nivo/bar";
 import { useSetStagesData } from "../../hooks/use-set-stages-data.hook";
+import { consts } from "./consts";
 
 export const StageBar = ({ isDashboard = false }) => {
   const { chartDataArray } = useSetStagesData(data);
@@ -13,21 +14,9 @@ export const StageBar = ({ isDashboard = false }) => {
         keys={["efforts"]}
         indexBy="stage"
         layout="vertical"
-        margin={{ top: 50, right: 30, bottom: 50, left: 120 }}
-        axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
-          legend: "Sum of Efforts",
-          legendPosition: "middle",
-          legendOffset: -90,
-        }}
-        axisBottom={{
-          tickSize: 5,
-          tickPadding: 5,
-          legend: "Stages",
-          legendPosition: "middle",
-          legendOffset: 40,
-        }}
+        margin={consts.margin}
+        axisLeft={consts.axisLeft}
+        axisBottom={consts.axisBottom}
         colors={["#0f46a0"]}
         enableGridY={false}
         enableLabel={false}
