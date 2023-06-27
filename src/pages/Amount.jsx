@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { AmountChart } from "../../components/AmountChart/AmountChart";
-import Header from "../../components/Header/Header";
+import { AmountChart } from "../components/AmountChart/AmountChart";
+import Header from "../components/Header/Header";
 
 export const Amount = () => {
   return (

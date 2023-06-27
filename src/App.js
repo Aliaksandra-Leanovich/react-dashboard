@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { AppRouter } from "./router/AppRouter";
-import Sidebar from "./scenes/global/Sidebar";
-import Topbar from "./scenes/global/Topbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Topbar from "./components/Topbar/Topbar";
 import { ColorModeContext, useMode } from "./theme";
 
 export const App = () => {

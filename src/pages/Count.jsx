@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import Header from "../../components/Header/Header";
-import { CountChart } from "../../components/CountChart/CountChart";
+import Header from "../components/Header/Header";
+import { CountChart } from "../components/CountChart/CountChart";
 
-const Pie = () => {
+export const Count = () => {
   return (
     <Box m="20px">
       <Header title="Count Chart" />
@@ -12,5 +12,3 @@ const Pie = () => {
     </Box>
   );
 };
-
-export default Pie;

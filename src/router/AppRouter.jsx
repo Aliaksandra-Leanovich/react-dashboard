@@ -1,24 +1,22 @@
 import { Route, Routes } from "react-router-dom";
-import { Amount } from "../scenes/amount";
-import { Deals } from "../scenes/bar";
-import Dashboard from "../scenes/dashboard";
-import { Efforts } from "../scenes/effortsBar";
-import Form from "../scenes/form";
-import { Projects } from "../scenes/line";
-import Pie from "../scenes/pie";
-import { RFX } from "../scenes/rfx";
-import { Stage } from "../scenes/stageBar";
+import { Amount } from "../pages/Amount";
+import { Deals } from "../pages/Deals";
+import { Dashboard } from "../pages/Dashboard";
+import { Efforts } from "../pages/Efforts";
+import { Projects } from "../pages/Projects";
+import { Count } from "../pages/Count";
+import { RFX } from "../pages/Rfx";
+import { Stage } from "../pages/Stages";
 
 export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
       <Route path="/rfx" element={<RFX />} />
-      <Route path="/form" element={<Form />} />
       <Route path="/deals" element={<Deals />} />
       <Route path="/efforts" element={<Efforts />} />
       <Route path="/stages" element={<Stage />} />
-      <Route path="/count" element={<Pie />} />
+      <Route path="/count" element={<Count />} />
       <Route path="/amount" element={<Amount />} />
       <Route path="/projects" element={<Projects />} />
     </Routes>

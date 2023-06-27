@@ -1,11 +1,11 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import { DealsChart } from "../../components/DealChart/DealsChart";
-import Header from "../../components/Header/Header";
-import { ProjectChart } from "../../components/ProjectsChart/ProjectChart";
-import { StageBar } from "../../components/StageBar/StageBar";
-import { tokens } from "../../theme";
+import { DealsChart } from "../components/DealChart/DealsChart";
+import Header from "../components/Header/Header";
+import { ProjectChart } from "../components/ProjectsChart/ProjectChart";
+import { StageBar } from "../components/StageBar/StageBar";
+import { tokens } from "../theme";
 
-const Dashboard = () => {
+export const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -87,5 +87,3 @@ const Dashboard = () => {
     </Box>
   );
 };
-
-export default Dashboard;

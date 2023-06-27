@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import Header from "../../components/Header/Header";
-import { EffortsChart } from "../../components/EffortsChart/EffortsChart";
+import Header from "../components/Header/Header";
+import { EffortsChart } from "../components/EffortsChart/EffortsChart";
 
 export const Efforts = () => {
   return (
