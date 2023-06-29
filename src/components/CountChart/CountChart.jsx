@@ -7,7 +7,14 @@ export const CountChart = ({ isDashboard = false }) => {
   const { chartDataArray } = useSetCountData(data);
 
   return (
-    <div style={{ height: "80vh" }}>
+    <div
+      style={{
+        height: isDashboard ? "40vh" : "80vh",
+        backgroundColor: "white",
+        padding: isDashboard ? "0px" : "20px",
+        borderRadius: "40px",
+      }}
+    >
       <ResponsivePie
         data={chartDataArray}
         colors={{ scheme: "blues" }}

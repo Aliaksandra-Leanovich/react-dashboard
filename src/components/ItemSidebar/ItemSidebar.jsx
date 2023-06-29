@@ -5,15 +5,27 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
 
-export const ItemSidebar = ({ title, to, icon, selected, setSelected }) => {
+export const ItemSidebar = ({
+  title,
+  to,
+  icon,
+  selected,
+  setSelected,
+  handleClick,
+}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const handleSelectedClick = () => {
+    handleClick(); ///!
+    setSelected(title);
+  };
 
   return (
     <MenuItem
       active={selected === title}
       style={{ color: colors.grey[100] }}
-      onClick={() => setSelected(title)} // too many rerenders
+      onClick={handleSelectedClick}
       icon={icon}
     >
       <Typography>{title}</Typography>

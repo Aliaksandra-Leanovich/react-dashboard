@@ -40,15 +40,22 @@ const Sidebar = () => {
   };
 
   const handleClick = () => {
+    setIsCollapsed(true);
+    document.body.style.overflow = isCollapsed && "auto";
+  };
+
+  const handleButtonClick = () => {
     setIsCollapsed(!isCollapsed);
+
     document.body.style.overflow = !isCollapsed ? "auto" : "hidden";
   };
+
   return (
     <Box sx={styles} flex={1}>
       <ProSidebar collapsed={isCollapsed} style={{ height: "100vh" }}>
         <Menu iconsape="square">
           <MenuItem
-            onClick={handleClick}
+            onClick={handleButtonClick}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
@@ -63,7 +70,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <div></div>
-                <IconButton onClick={handleClick}>
+                <IconButton onClick={handleButtonClick}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
@@ -84,6 +91,7 @@ const Sidebar = () => {
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              handleClick={handleClick}
             />
             <ItemSidebar
               title="RFX"
@@ -91,6 +99,7 @@ const Sidebar = () => {
               icon={<AccountTreeIcon />}
               selected={selected}
               setSelected={setSelected}
+              handleClick={handleClick}
             />
             <Typography
               variant="h6"
@@ -105,6 +114,7 @@ const Sidebar = () => {
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              handleClick={handleClick}
             />
             <ItemSidebar
               title="Efforts Chart"
@@ -113,6 +123,7 @@ const Sidebar = () => {
               selected={selected}
               set
               Selected={setSelected}
+              handleClick={handleClick}
             />
             <ItemSidebar
               title="Stages Chart"
@@ -120,6 +131,7 @@ const Sidebar = () => {
               icon={<AlignVerticalBottomIcon />}
               selected={selected}
               setSelected={setSelected}
+              handleClick={handleClick}
             />
             <ItemSidebar
               title="Amount Chart"
@@ -127,6 +139,7 @@ const Sidebar = () => {
               icon={<AlignVerticalBottomIcon />}
               selected={selected}
               setSelected={setSelected}
+              handleClick={handleClick}
             />
 
             <ItemSidebar
@@ -135,6 +148,7 @@ const Sidebar = () => {
               icon={<PieChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              handleClick={handleClick}
             />
             <ItemSidebar
               title="Projects Chart"
@@ -142,6 +156,7 @@ const Sidebar = () => {
               icon={<AlignHorizontalLeftIcon />}
               selected={selected}
               setSelected={setSelected}
+              handleClick={handleClick}
             />
           </Box>
         </Menu>

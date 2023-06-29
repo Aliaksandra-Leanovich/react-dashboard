@@ -12,8 +12,11 @@ export const ProjectChart = ({ isDashboard = false }) => {
   return (
     <div
       style={{
-        height: isDashboard ? "44vh" : "700px",
-        width: isDashboard ? "50vw" : "1000px",
+        height: isDashboard ? "44vh" : "80vh",
+        width: isDashboard ? "50vw" : "80vw",
+        backgroundColor: "white",
+        padding: isDashboard ? "0px" : "20px",
+        borderRadius: "40px",
       }}
     >
       <Bar data={projectsData} options={options} />

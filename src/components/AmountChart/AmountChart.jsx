@@ -12,7 +12,15 @@ export const AmountChart = ({ isDashboard = false }) => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <div style={{ height: isDashboard ? "40vh" : "600px" }}>
+    <div
+      style={{
+        height: isDashboard ? "40vh" : "70vh",
+        width: isDashboard ? "40vw" : "70vw",
+        backgroundColor: "white",
+        padding: isDashboard ? "0px" : "20px",
+        borderRadius: "40px",
+      }}
+    >
       <ResponsiveBar
         data={chartDataArray}
         keys={["amount"]}

@@ -51,11 +51,22 @@ export const Dashboard = () => {
                 marginLeft="10px"
                 color={colors.grey[100]}
               >
-                Amount
+                Count
               </Typography>
               <AmountChart isDashboard={true} />
             </ChartSC>
             {/* <EffortsChart isDashboard={true} /> */}
+            <ChartSC>
+              <Typography
+                variant="h5"
+                fontWeight="600"
+                marginLeft="10px"
+                color={colors.grey[100]}
+              >
+                Amount
+              </Typography>
+              <CountChart isDashboard={true} />
+            </ChartSC>
           </MainGridSC>
           <MainGridSC>
             <ChartSC>
