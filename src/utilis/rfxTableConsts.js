@@ -65,7 +65,7 @@ export const columns = [
 export const styles = {
   "& .MuiDataGrid-root": { border: "none" },
   "& .MuiDataGrid-cell": { borderBottom: "none" },
-  "& .name-column--cell": { color: "white" },
+  "& .name-column--cell": { color: "black" },
   "& .MuiDataGrid-columnHeaders": {
     backgroundColor: "#0f46a0",
     color: "white",

@@ -1,17 +1,17 @@
 import { Route, Routes } from "react-router-dom";
-import { Amount } from "../pages/Amount";
 import { Deals } from "../pages/Deals";
-import { Dashboard } from "../pages/Dashboard";
-import { Efforts } from "../pages/Efforts";
-import { Projects } from "../pages/Projects";
+import { Amount } from "../pages/Amount";
 import { Count } from "../pages/Count";
+import { Efforts } from "../pages/Efforts";
+import { Home } from "../pages/Home";
+import { Projects } from "../pages/Projects";
 import { RFX } from "../pages/Rfx";
 import { Stage } from "../pages/Stages";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
+      <Route path="/" element={<Home />} />
       <Route path="/rfx" element={<RFX />} />
       <Route path="/deals" element={<Deals />} />
       <Route path="/efforts" element={<Efforts />} />

@@ -3,12 +3,16 @@ import { ResponsiveBar } from "@nivo/bar";
 import { mockDataTeam as data } from "../../data/mockData";
 import { useSetEffortsData } from "../../hooks/use-set-efforts-data.hook";
 import { consts } from "./consts";
+import { useTheme } from "@mui/material";
+import { tokens } from "../../theme";
 
 export const EffortsChart = ({ isDashboard = false }) => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   const { chartDataArray } = useSetEffortsData(data);
 
   return (
-    <div style={{ height: isDashboard ? "200px" : "600px" }}>
+    <div style={{ height: isDashboard ? "44vh" : "600px" }}>
       <ResponsiveBar
         data={chartDataArray}
         keys={["efforts"]}
@@ -17,9 +21,12 @@ export const EffortsChart = ({ isDashboard = false }) => {
         margin={consts.margin}
         axisLeft={consts.axisLeft}
         axisBottom={consts.axisBottom}
-        colors={["#0f46a0"]}
-        enableGridY={false}
-        enableLabel={false}
+        colors={[colors.blueAccent[100]]}
+        enableGridY={true}
+        labelSkipWidth={12}
+        labelSkipHeight={12}
+        labelTextColor={colors.primary[100]}
+        enableLabel={true}
         motionStiffness={120}
         motionDamping={16}
       />

@@ -1,11 +1,11 @@
 export const consts = {
-  margin: { top: 50, right: 30, bottom: 50, left: 120 },
+  margin: { top: 14, right: 30, bottom: 50, left: 60 },
   axisLeft: {
     tickSize: 5,
     tickPadding: 5,
     legend: "Efforts",
     legendPosition: "middle",
-    legendOffset: -90,
+    legendOffset: -40,
   },
   axisBottom: {
     tickSize: 5,

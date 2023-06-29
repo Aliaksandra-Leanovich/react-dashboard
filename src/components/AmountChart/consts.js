@@ -1,14 +1,14 @@
 export const consts = {
-  margin: { top: 50, right: 30, bottom: 50, left: 120 },
+  margin: { top: 50, right: 30, bottom: 50, left: 100 },
   axisLeft: {
-    tickSize: 5,
+    tickSize: 10,
     tickPadding: 5,
     legend: "Deal Owner",
     legendPosition: "middle",
-    legendOffset: -90,
+    legendOffset: -80,
   },
   axisBottom: {
-    tickSize: 5,
+    tickSize: 10,
     tickPadding: 5,
     legend: "Amount",
     legendPosition: "middle",

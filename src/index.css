@@ -72,6 +72,11 @@ body,
 .content {
   height: 100%;
   width: 100%;
+  background-color: rgb(236, 239, 241);
+}
+
+.content {
+  padding-left: 80px;
 }
 
 .app {

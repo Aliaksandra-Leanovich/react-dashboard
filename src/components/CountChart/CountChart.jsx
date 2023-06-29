@@ -3,15 +3,15 @@ import { mockDataTeam as data } from "../../data/mockData";
 import { useSetCountData } from "../../hooks/use-set-count-data.hook";
 import { consts } from "./consts";
 
-export const CountChart = () => {
+export const CountChart = ({ isDashboard = false }) => {
   const { chartDataArray } = useSetCountData(data);
 
   return (
-    <div style={{ height: "500px" }}>
+    <div style={{ height: "80vh" }}>
       <ResponsivePie
         data={chartDataArray}
         colors={{ scheme: "blues" }}
-        margin={consts.margin}
+        margin={isDashboard ? consts.marginMobile : consts.margin}
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
@@ -25,7 +25,7 @@ export const CountChart = () => {
         radialLabelsLinkColor={{ from: "color" }}
         enableSliceLabels={false}
         activeOuterRadiusOffset={8}
-        legends={consts.legends}
+        legends={!isDashboard && consts.legends}
       />
     </div>
   );

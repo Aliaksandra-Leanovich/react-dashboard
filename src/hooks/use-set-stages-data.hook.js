@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-import { getValues } from "../utilis/getValues";
 
 export const useSetStagesData = (data) => {
   const stagesData = useCallback(() => {
@@ -21,7 +20,10 @@ export const useSetStagesData = (data) => {
     }, {});
   }, [data]);
 
-  const chartDataArray = getValues(stagesData());
+  const chartDataArray = Object.values(stagesData()).map((item) => ({
+    ...item,
+    efforts: Math.round(item.efforts),
+  }));
 
   return { chartDataArray };
 };

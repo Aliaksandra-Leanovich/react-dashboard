@@ -1,5 +1,6 @@
 export const consts = {
   margin: { top: 50, right: 80, bottom: 70, left: 80 },
+  marginMobile: { top: 40, right: 10, bottom: 20, left: 10 },
   legends: [
     {
       anchor: "bottom",

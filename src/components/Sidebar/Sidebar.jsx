@@ -15,14 +15,17 @@ import { ItemSidebar } from "../ItemSidebar/ItemSidebar";
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [selected, setSelected] = useState("Dashboard");
 
   const styles = {
     height: "100vh",
+    position: "fixed",
+    zIndex: "2",
+    background: `white !important`,
     "& .pro-sidebar-inner": {
       height: "100vh",
-      background: `${colors.primary[400]} !important`,
+      background: `white !important`,
     },
     "& .pro-icon-wrapper": {},
     "& .pro-inner-item": {
@@ -36,12 +39,16 @@ const Sidebar = () => {
     },
   };
 
+  const handleClick = () => {
+    setIsCollapsed(!isCollapsed);
+    document.body.style.overflow = !isCollapsed ? "auto" : "hidden";
+  };
   return (
-    <Box sx={styles}>
+    <Box sx={styles} flex={1}>
       <ProSidebar collapsed={isCollapsed} style={{ height: "100vh" }}>
         <Menu iconsape="square">
           <MenuItem
-            onClick={() => setIsCollapsed(!isCollapsed)}
+            onClick={handleClick}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
@@ -56,7 +63,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <div></div>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                <IconButton onClick={handleClick}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
