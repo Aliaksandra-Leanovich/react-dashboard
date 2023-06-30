@@ -41,7 +41,7 @@ const Sidebar = () => {
 
   const handleClick = () => {
     setIsCollapsed(true);
-    document.body.style.overflow = isCollapsed && "auto";
+    document.body.style.overflow = "auto";
   };
 
   const handleButtonClick = () => {

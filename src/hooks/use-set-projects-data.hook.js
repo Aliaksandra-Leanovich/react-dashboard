@@ -1,18 +1,15 @@
 export const useSetProjectsData = (data) => {
   const stageOrder = [
-    "Closed Won",
-    "Analysis",
-    "Closed Lost",
-    "Negotiation",
-    "On Hold",
-    "Proporsal",
-    "Waiting",
+    { stageName: "Closed Won", color: "#4361ee" },
+    { stageName: "Analysis", color: "#a2d2ff" },
+    { stageName: "Closed Lost", color: "#023e8a" },
+    { stageName: "Negotiation", color: "#48cae4" },
+    { stageName: "On Hold", color: "#90e0ef" },
+    { stageName: "Proporsal", color: "#0077b6" },
+    { stageName: "Waiting", color: "#03045e" },
   ];
 
-  const barColors = data.map(() => {
-    const randomColor = "#" + ((Math.random() * 0xffffff) << 0).toString(16);
-    return randomColor;
-  });
+  const projectStatuses = [...new Set(data.map((project) => project.stage))];
 
   const sortedData = [...data].sort(
     (a, b) => new Date(a.started) - new Date(b.started)
@@ -25,6 +22,13 @@ export const useSetProjectsData = (data) => {
 
   const labels = mappedData.map((project) => project.name);
   const values = mappedData.map((project) => project.stage);
+
+  const barColors = values.map((stage) => {
+    const matchedStage = stageOrder.find(
+      (projectInfo) => projectInfo.stageName === stage
+    );
+    return matchedStage ? matchedStage.color : "";
+  });
 
   const projectsData = {
     labels: labels,
@@ -44,7 +48,10 @@ export const useSetProjectsData = (data) => {
     scales: {
       x: {
         type: "category",
-        labels: stageOrder,
+        labels: stageOrder.map((project) => project.stageName),
+        ticks: {
+          color: stageOrder.map((project) => project.color),
+        },
       },
     },
   };
