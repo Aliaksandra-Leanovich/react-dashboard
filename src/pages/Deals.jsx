@@ -5,7 +5,7 @@ import { DealsChart } from "../components/DealChart/DealsChart";
 export const Deals = () => {
   return (
     <Box m="20px">
-      <Header title="Deals Chart" />
+      <Header title="Count of Deals Chart" />
       <Box height="75vh">
         <DealsChart isDashboard={false} />
       </Box>

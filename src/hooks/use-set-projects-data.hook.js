@@ -9,8 +9,6 @@ export const useSetProjectsData = (data) => {
     { stageName: "Waiting", color: "#03045e" },
   ];
 
-  const projectStatuses = [...new Set(data.map((project) => project.stage))];
-
   const sortedData = [...data].sort(
     (a, b) => new Date(a.started) - new Date(b.started)
   );

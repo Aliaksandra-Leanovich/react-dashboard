@@ -5,7 +5,7 @@ import { StageBar } from "../components/StageBar/StageBar";
 export const Stage = () => {
   return (
     <Box m="20px">
-      <Header title="Stage Chart" />
+      <Header title="Stages vs Efforts Chart" />
       <Box height="75vh">
         <StageBar isDashboard={false} />
       </Box>

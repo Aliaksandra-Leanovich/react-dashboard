@@ -6,49 +6,18 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { useState } from "react";
+import { styles } from "./consts";
 import { Menu, MenuItem, ProSidebar } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import { ItemSidebar } from "../ItemSidebar/ItemSidebar";
+import { useSidebar } from "../../hooks/use-sidebar.hook";
 
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  const [selected, setSelected] = useState("Dashboard");
-
-  const styles = {
-    height: "100vh",
-    position: "fixed",
-    zIndex: "2",
-    background: `white !important`,
-    "& .pro-sidebar-inner": {
-      height: "100vh",
-      background: `white !important`,
-    },
-    "& .pro-icon-wrapper": {},
-    "& .pro-inner-item": {
-      padding: "5px 35px 5px 20px !important",
-    },
-    "& .pro-inner-item:hover": {
-      color: "#0f46a0 !important",
-    },
-    "& .pro-menu-item.active": {
-      color: "#0f46a0 !important",
-    },
-  };
-
-  const handleClick = () => {
-    setIsCollapsed(true);
-    document.body.style.overflow = "auto";
-  };
-
-  const handleButtonClick = () => {
-    setIsCollapsed(!isCollapsed);
-
-    document.body.style.overflow = !isCollapsed ? "auto" : "hidden";
-  };
+  const { isCollapsed, handleButtonClick, handleClick, selected, setSelected } =
+    useSidebar();
 
   return (
     <Box sx={styles} flex={1}>
@@ -121,8 +90,7 @@ const Sidebar = () => {
               to="/efforts"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
-              set
-              Selected={setSelected}
+              setSelected={setSelected}
               handleClick={handleClick}
             />
             <ItemSidebar

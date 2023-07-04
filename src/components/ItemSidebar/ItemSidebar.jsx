@@ -17,7 +17,7 @@ export const ItemSidebar = ({
   const colors = tokens(theme.palette.mode);
 
   const handleSelectedClick = () => {
-    handleClick(); ///!
+    handleClick();
     setSelected(title);
   };
 

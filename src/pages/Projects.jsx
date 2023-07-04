@@ -5,7 +5,7 @@ import { ProjectChart } from "../components/ProjectsChart/ProjectChart";
 export const Projects = () => {
   return (
     <Box m="20px">
-      <Header title="Projects Chart" />
+      <Header title="Rfx Chart" />
       <Box height="75vh">
         <ProjectChart isDashboard={false} />
       </Box>

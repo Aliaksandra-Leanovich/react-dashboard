@@ -27,7 +27,7 @@ export const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Projects
+                RFX Chart
               </Typography>
               <ProjectChart isDashboard={true} />
             </ChartSC>
@@ -38,7 +38,7 @@ export const Dashboard = () => {
                 marginLeft="10px"
                 color={colors.grey[100]}
               >
-                Efforts
+                Efforts vs Deal Owners Chart
               </Typography>
               <EffortsChart isDashboard={true} />
             </ChartSC>
@@ -51,11 +51,10 @@ export const Dashboard = () => {
                 marginLeft="10px"
                 color={colors.grey[100]}
               >
-                Count
+                Count of Stages Chart
               </Typography>
               <AmountChart isDashboard={true} />
             </ChartSC>
-            {/* <EffortsChart isDashboard={true} /> */}
             <ChartSC>
               <Typography
                 variant="h5"
@@ -63,7 +62,7 @@ export const Dashboard = () => {
                 marginLeft="10px"
                 color={colors.grey[100]}
               >
-                Amount
+                Amount vs Deal Owners Chart
               </Typography>
               <CountChart isDashboard={true} />
             </ChartSC>
@@ -76,7 +75,7 @@ export const Dashboard = () => {
                 marginLeft="10px"
                 color={colors.grey[100]}
               >
-                Deals
+                Count of Deals Chart
               </Typography>
               <DealsChart isDashboard={true} />
             </ChartSC>
@@ -87,7 +86,7 @@ export const Dashboard = () => {
                 marginLeft="10px"
                 color={colors.grey[100]}
               >
-                Stage
+                Stages vs Efforts Chart"
               </Typography>
               <StageBar isDashboard={true} />
             </ChartSC>

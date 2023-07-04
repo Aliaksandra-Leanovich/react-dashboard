@@ -5,7 +5,7 @@ import Header from "../components/Header/Header";
 export const Amount = () => {
   return (
     <Box m="20px">
-      <Header title="Amount Chart" />
+      <Header title="Amount vs Deal Owners Chart" />
       <Box height="75vh">
         <AmountChart isDashboard={false} />
       </Box>
