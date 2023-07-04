@@ -1,17 +1,8 @@
-export const useSetProjectsData = (data) => {
-  const stageOrder = [
-    { stageName: "Closed Won", color: "#4361ee" },
-    { stageName: "Analysis", color: "#a2d2ff" },
-    { stageName: "Closed Lost", color: "#023e8a" },
-    { stageName: "Negotiation", color: "#48cae4" },
-    { stageName: "On Hold", color: "#90e0ef" },
-    { stageName: "Proporsal", color: "#0077b6" },
-    { stageName: "Waiting", color: "#03045e" },
-  ];
+import { stageOrder } from "../utilis/stageOrder";
+import { sortData } from "../utilis/sortDataByTime";
 
-  const sortedData = [...data].sort(
-    (a, b) => new Date(a.started) - new Date(b.started)
-  );
+export const useSetProjectsData = (data) => {
+  const sortedData = sortData(data);
 
   const mappedData = sortedData.map((project) => ({
     name: project.name,

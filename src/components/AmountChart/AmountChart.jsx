@@ -31,12 +31,10 @@ export const AmountChart = ({ isDashboard = false }) => {
         axisBottom={consts.axisBottom}
         colors={[colors.blueAccent[100]]}
         enableGridY={true}
-        labelSkipWidth={12}
-        labelSkipHeight={12}
         labelTextColor={colors.primary[100]}
         enableLabel={true}
-        motionStiffness={120}
-        motionDamping={16}
+        motionStiffness={220}
+        motionDamping={19}
         layoutId="chart"
       />
     </div>

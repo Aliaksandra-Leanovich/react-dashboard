@@ -7,7 +7,7 @@ export const Efforts = () => {
     <Box m="20px">
       <Header title="Efforts vs Deal Owners Chart" />
       <Box height="75vh">
-        <EffortsChart isDashboard={false} />
+        <EffortsChart />
       </Box>
     </Box>
   );

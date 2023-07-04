@@ -23,7 +23,7 @@ export const Dashboard = () => {
           <MainGridSC>
             <ChartSC>
               <Typography
-                variant="h5"
+                variant="h4"
                 fontWeight="600"
                 color={colors.grey[100]}
               >
@@ -33,7 +33,7 @@ export const Dashboard = () => {
             </ChartSC>
             <ChartSC>
               <Typography
-                variant="h5"
+                variant="h4"
                 fontWeight="600"
                 marginLeft="10px"
                 color={colors.grey[100]}
@@ -46,7 +46,7 @@ export const Dashboard = () => {
           <MainGridSC>
             <ChartSC>
               <Typography
-                variant="h5"
+                variant="h4"
                 fontWeight="600"
                 marginLeft="10px"
                 color={colors.grey[100]}
@@ -57,7 +57,7 @@ export const Dashboard = () => {
             </ChartSC>
             <ChartSC>
               <Typography
-                variant="h5"
+                variant="h4"
                 fontWeight="600"
                 marginLeft="10px"
                 color={colors.grey[100]}
@@ -70,7 +70,7 @@ export const Dashboard = () => {
           <MainGridSC>
             <ChartSC>
               <Typography
-                variant="h5"
+                variant="h4"
                 fontWeight="600"
                 marginLeft="10px"
                 color={colors.grey[100]}
@@ -81,12 +81,12 @@ export const Dashboard = () => {
             </ChartSC>
             <ChartSC>
               <Typography
-                variant="h5"
+                variant="h4"
                 fontWeight="600"
                 marginLeft="10px"
                 color={colors.grey[100]}
               >
-                Stages vs Efforts Chart"
+                Stages vs Efforts Chart
               </Typography>
               <StageBar isDashboard={true} />
             </ChartSC>

@@ -53,6 +53,11 @@ export const columns = [
 ];
 
 export const styles = {
+  borderRadius: "40px",
+  backgroundColor: "white",
+  padding: "30px",
+  margin: "40px 0 0 0",
+  height: "75vh",
   "& .MuiDataGrid-cell": { borderBottom: "none" },
   "& .name-column--cell": { color: "black" },
 

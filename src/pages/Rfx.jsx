@@ -8,14 +8,7 @@ export const RFX = () => {
   return (
     <Box m="20px">
       <Header title="RFX Chart" />
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={styles}
-        borderRadius="40px"
-        backgroundColor="white"
-        padding="30px"
-      >
+      <Box sx={styles}>
         <DataGrid rows={mockDataTeam} columns={columns} />
       </Box>
     </Box>

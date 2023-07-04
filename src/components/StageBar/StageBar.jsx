@@ -15,7 +15,7 @@ export const StageBar = ({ isDashboard = false }) => {
     <div
       style={{
         height: isDashboard ? "40vh" : "70vh",
-        width: isDashboard ? "40vw" : "70vw",
+        width: isDashboard ? "56vw" : "70vw",
         backgroundColor: "white",
         padding: isDashboard ? "0px" : "20px",
         borderRadius: "40px",

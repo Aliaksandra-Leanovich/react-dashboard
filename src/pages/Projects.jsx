@@ -7,7 +7,7 @@ export const Projects = () => {
     <Box m="20px">
       <Header title="Rfx Chart" />
       <Box height="75vh">
-        <ProjectChart isDashboard={false} />
+        <ProjectChart />
       </Box>
     </Box>
   );

@@ -14,7 +14,7 @@ export const DealsChart = ({ isDashboard = false }) => {
     <div
       style={{
         height: isDashboard ? "40vh" : "70vh",
-        width: isDashboard ? "40vw" : "70vw",
+        width: isDashboard ? "34vw" : "70vw",
         backgroundColor: "white",
         padding: isDashboard ? "0px" : "20px",
         borderRadius: "40px",

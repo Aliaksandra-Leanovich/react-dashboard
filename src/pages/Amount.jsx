@@ -7,7 +7,7 @@ export const Amount = () => {
     <Box m="20px">
       <Header title="Amount vs Deal Owners Chart" />
       <Box height="75vh">
-        <AmountChart isDashboard={false} />
+        <AmountChart />
       </Box>
     </Box>
   );

@@ -7,7 +7,7 @@ export const Stage = () => {
     <Box m="20px">
       <Header title="Stages vs Efforts Chart" />
       <Box height="75vh">
-        <StageBar isDashboard={false} />
+        <StageBar />
       </Box>
     </Box>
   );
